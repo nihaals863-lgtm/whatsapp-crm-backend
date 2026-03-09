@@ -10,7 +10,7 @@ const server = http.createServer(app);
 // Socket.io Setup
 const io = new Server(server, {
     cors: {
-        origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+        origin: process.env.FRONTEND_URL,
         methods: ['GET', 'POST', 'PUT', 'DELETE'],
         credentials: true
     },
@@ -59,7 +59,7 @@ app.set('io', io);
 
 server.listen(PORT, () => {
     console.log(`✅ CRM Server running on port ${PORT}`);
-    console.log(`🔗 Frontend: ${process.env.FRONTEND_URL || 'http://localhost:3000'}`);
+    console.log(`🔗 Frontend: ${process.env.FRONTEND_URL}`);
     console.log(`📡 Socket.io: Active`);
 });
 
