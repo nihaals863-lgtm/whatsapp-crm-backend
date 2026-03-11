@@ -108,7 +108,15 @@ exports.login = async (req, res, next) => {
                     id: user.id,
                     name: user.name,
                     email: user.email,
-                    role: user.role?.name
+                    role: user.role?.name,
+                    roleId: user.roleId,
+                    status: user.status,
+                    country: user.country,
+                    team: user.team,
+                    client: user.client,
+                    assignedChannels: user.assignedChannels,
+                    permissions: user.permissions,
+                    createdAt: user.createdAt
                 }
             }
         });
