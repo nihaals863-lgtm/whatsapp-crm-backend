@@ -464,6 +464,8 @@ model Template {
   createdBy   String   @default("System")
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+
+  @@map("template")
 }
 
 model Rota {
@@ -481,6 +483,8 @@ model Rota {
   createdBy   String   @default("System")
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+
+  @@map("rota")
 }
 
 
@@ -497,6 +501,8 @@ model Menu {
   // Relations
   role      Role      @relation(fields: [roleId], references: [id], onDelete: Cascade)
   submenus  Submenu[]
+
+  @@map("menu")
 }
 
 model Submenu {
@@ -510,6 +516,8 @@ model Submenu {
 
   // Relations
   menu      Menu     @relation(fields: [menuId], references: [id], onDelete: Cascade)
+
+  @@map("submenu")
 }
 
 model Customer {
